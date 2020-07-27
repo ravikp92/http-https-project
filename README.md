@@ -1,18 +1,25 @@
-# tlsproject
+# HTTP - HTTPS PROJECT 
+
 This project gives you basic understanding glassfish server integration with self signed certifcate using keystore or openssl.
 
-Glassfish v3.1
-Self signed certificate generated from openssl.
+Either you can get certificates from CA or you can generate your own. Second option : Self signed certificate has been defined :
+
 
 Please find the steps below:
 
 Make sue you have installed glassfish in eclipse.
 
 1. Maven Project
-2. Add glassfish  server:
+2. Glassfish Sever
+3. openssl.exe
+4. jdk 1.7
 
-HTTP - HTTPS convert steps.(Using Command line in Windows)
+keytool you can find in jdk1.7/jre/lib folder. Make sure you add jre path in environment variables in order to execute keytool commands
+
+HTTP - HTTPS PROJECT convert steps.(Using Command line in Windows)
 -------------------------------------------------------------------
+
+PORT : 443 for HTTPS
 domain - name -: computer-name(use full computer name)
 
 Make sure password will be "changeit" as same as glassfish master password.
@@ -54,7 +61,7 @@ add certificate to trustsdstore :- cacerts.jks
 keytool -import -v -trustcacerts -alias computer-name -file computer-name.crt -keystore cacerts.jks -keypass changeit -storepass changeit
 
 
-make changes of port: 443 and server name : computer-name in glassfish admin console:
+Make changes of port: 443 and server name : computer-name in glassfish admin console:
 --------------------------------------------------
 http://localhost:4848/common/index.jsf
   
