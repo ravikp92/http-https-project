@@ -9,7 +9,7 @@ Please find the steps below:
 
 Make sue you have installed glassfish in eclipse.
 
-1. Maven Project
+1. Dyanmic Web project
 2. Glassfish Sever
 3. openssl.exe
 4. jdk 1.7
