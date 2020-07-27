@@ -19,11 +19,11 @@ keytool you can find in jdk1.7/jre/lib folder. Make sure you add jre path in env
 HTTP - HTTPS PROJECT convert steps.(Using Command line in Windows)
 -------------------------------------------------------------------
 
-PORT : 443 for HTTPS
 domain - name -: computer-name(use full computer name)
 
 Make sure password will be "changeit" as same as glassfish master password.
 
+- Chnages in domain.xml ----PORT : 443 for HTTPS- change in http listener-2 -- ssl.. replace "s1as" to "computer-name" everywhere.
 Run all commands at location ../glassfish/domains/domain1/config
 
 Generating RSA Private key:
