@@ -22,37 +22,37 @@ Generating RSA Private key:
 
 openssl genrsa -des3 -out computer-name.key 2048
 
-Generate csr(Certificate signing request) (use first and last name or Common name as <your-computer-name> )
+Generate csr(Certificate signing request) (use first and last name or Common name as computer-name )
 -------------------------
 
 openssl req -new -key computer-name.key -out computer-name.csr
 
 In order to access for multi domains
 
-copy <your-computer-name>.key <your-computer-name>.key.org
-openssl rsa -in <your-computer-name>.key.org -out <your-computer-name>.key
+copy computer-name.key computer-name.key.org
+openssl rsa -in computer-name.key.org -out computer-name.key
 
 
 Generate self signed certificate (.crt) from private key and csr
 -------------------------------
-openssl x509 -req -days 365 -in <your-computer-name>.csr -signkey <your-computer-name>.key -out <your-computer-name>.crt
+openssl x509 -req -days 365 -in computer-name.csr -signkey computer-name.key -out computer-name.crt
 
 
-generate jks using crt file - (use first and last name or Common name as <your-computer-name> )
+generate jks using crt file - (use first and last name or Common name as computer-name )
 -----------------------------------------
-keytool -genkeypair -alias <your-computer-name> -file <your-computer-name>.crt -storetype jks -keystore <your-computer-name>.jks -validity 366 -keyalg RSA -keysize 2048
+keytool -genkeypair -alias computer-name -file computer-name.crt -storetype jks -keystore computer-name.jks -validity 366 -keyalg RSA -keysize 2048
 
 copy your keystore to keystore.jks
 -----------------------------------------
-keytool -importkeystore -srckeystore <your-computer-name>.jks -destkeystore keystore.jks
+keytool -importkeystore -srckeystore computer-name.jks -destkeystore keystore.jks
 
 
 add certificate to trustsdstore :- cacerts.jks
 ----------------------------------------------------
-keytool -import -v -trustcacerts -alias <your-computer-name> -file <your-computer-name>.crt -keystore cacerts.jks -keypass changeit -storepass changeit
+keytool -import -v -trustcacerts -alias computer-name -file computer-name.crt -keystore cacerts.jks -keypass changeit -storepass changeit
 
 
-make changes of port: 443 and server name : <YOUR-COMPUTER-NAME> in glassfish admin console:
+make changes of port: 443 and server name : computer-name in glassfish admin console:
 --------------------------------------------------
 http://localhost:4848/common/index.jsf
   
