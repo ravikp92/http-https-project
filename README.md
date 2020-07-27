@@ -17,6 +17,8 @@ domain - name -: computer-name(use full computer name)
 
 Make sure password will be "changeit" as same as glassfish master password.
 
+Run all commands at location ../glassfish/domains/domain1/config
+
 Generating RSA Private key:
 -------------------------------------------
 
